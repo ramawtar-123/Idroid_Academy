@@ -125,9 +125,9 @@ export default function Footer() {
 
             <li><Link to="/courses/digital-marketing" className="hover:text-blue-500 cursor-pointer transition">Digital Marketing</Link></li>
 
-            <li><Link to="/courses/video-editing" className="hover:text-blue-500 cursor-pointer transition">Video Editing</Link></li>
+            {/* <li><Link to="/courses/video-editing" className="hover:text-blue-500 cursor-pointer transition">Video Editing</Link></li>
 
-            <li><Link to="/courses/advanced-program" className="hover:text-blue-500 cursor-pointer transition">Motion Graphics</Link></li>
+            <li><Link to="/courses/advanced-program" className="hover:text-blue-500 cursor-pointer transition">Motion Graphics</Link></li> */}
 
           </ul>
 
