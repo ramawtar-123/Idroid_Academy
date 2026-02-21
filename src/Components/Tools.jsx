@@ -11,14 +11,14 @@ export default function Tools({ tools: customTools }) {
   const displayTools = customTools || defaultTools;
 
   return (
-    <section className="py-16 bg-white text-center">
+    <section className="py-16 bg-gray-100 text-center">
       <h2 className="text-3xl font-bold mb-8 text-[#1e3a8a]">
         Tools You Will Master
       </h2>
 
       <div className="flex justify-center gap-6 flex-wrap">
         {displayTools.map((tool, i) => (
-          <div key={i} className="bg-[#3b82f6] p-4 rounded-full w-16 h-16 flex items-center justify-center font-bold text-white hover:bg-[#1e3a8a] transition">
+          <div key={i} className="bg-white p-4 rounded-full w-16 h-16 flex items-center justify-center font-bold text-white hover:bg-white/50 duration-700 transition">
             <img 
               src={tool.src} 
               alt={tool.name}

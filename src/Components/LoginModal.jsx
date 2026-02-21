@@ -50,55 +50,96 @@ export default function LoginModal({ isOpen, onClose }) {
 
     setIsLoading(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      console.log(isLogin ? "Login Data:" : "Signup Data:", formData);
-      
+    try {
       if (isLogin) {
-        // Login successful - store user data
-        const userData = {
-          email: formData.email,
-          name: formData.email.split('@')[0], // Extract name from email for demo
-          loginTime: new Date().toISOString()
-        };
-        localStorage.setItem('user', JSON.stringify(userData));
-        setSubmitted(true);
-        setIsLoading(false);
-        setFormData({ email: "", password: "", name: "", phone: "" });
-        setErrors({});
-        
-        setTimeout(() => {
-          setSubmitted(false);
-          onClose();
-          // Trigger syllabus download after successful login
-          if (window.handleSyllabusDownload) {
-            window.handleSyllabusDownload();
+        // Login API call
+        const response = await fetch('http://localhost:5001/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            password: formData.password
+          }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          console.log("Login successful:", result.data);
+          // Store user data and token
+          localStorage.setItem('user', JSON.stringify(result.data.user));
+          if (result.data.token) {
+            localStorage.setItem('token', result.data.token);
           }
-        }, 2000);
+          setSubmitted(true);
+          setIsLoading(false);
+          setFormData({ email: "", password: "", name: "", phone: "" });
+          setErrors({});
+          
+          setTimeout(() => {
+            setSubmitted(false);
+            onClose();
+            // Trigger syllabus download after successful login
+            if (window.handleSyllabusDownload) {
+              window.handleSyllabusDownload();
+            }
+          }, 2000);
+        } else {
+          console.error("Login failed:", result.message);
+          setIsLoading(false);
+          alert(result.message || 'Login failed. Please try again.');
+        }
       } else {
-        // Signup successful - store user data
-        const userData = {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          signupTime: new Date().toISOString()
-        };
-        localStorage.setItem('user', JSON.stringify(userData));
-        setSubmitted(true);
-        setIsLoading(false);
-        setFormData({ email: "", password: "", name: "", phone: "" });
-        setErrors({});
-        
-        setTimeout(() => {
-          setSubmitted(false);
-          onClose();
-          // Trigger syllabus download after successful signup
-          if (window.handleSyllabusDownload) {
-            window.handleSyllabusDownload();
+        // Signup API call
+        const response = await fetch('http://localhost:5001/api/auth/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            phone: formData.phone.trim(),
+            password: formData.password.trim()
+          }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          console.log("Signup successful:", result.data);
+          // Store user data and token
+          localStorage.setItem('user', JSON.stringify(result.data.user));
+          if (result.data.token) {
+            localStorage.setItem('token', result.data.token);
           }
-        }, 2000);
+          setSubmitted(true);
+          setIsLoading(false);
+          setFormData({ email: "", password: "", name: "", phone: "" });
+          setErrors({});
+          
+          setTimeout(() => {
+            setSubmitted(false);
+            onClose();
+            // Trigger syllabus download after successful signup
+            if (window.handleSyllabusDownload) {
+              window.handleSyllabusDownload();
+            }
+          }, 2000);
+        } else {
+          console.error("Signup failed:", result.message);
+          console.error("Validation errors:", result.errors);
+          setIsLoading(false);
+          alert(result.message || 'Signup failed. Please try again.');
+        }
       }
-    }, 1500);
+    } catch (error) {
+      console.error("Network error:", error);
+      setIsLoading(false);
+      alert('Network error. Please check your connection and try again.');
+    }
   };
 
   const toggleMode = () => {

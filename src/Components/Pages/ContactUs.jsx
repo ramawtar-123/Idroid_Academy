@@ -117,7 +117,7 @@ export default function Contact() {
 
   // Submit
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
 
     e.preventDefault();
 
@@ -135,27 +135,103 @@ export default function Contact() {
 
 
 
-    console.log("Send to backend:", formData);
+    try {
 
-    setSubmitted(true);
+      const submitData = {
 
-    setFormData({
+        name: formData.name,
 
-      name: "",
+        email: formData.email,
 
-      email: "",
+        phone: formData.phone,
 
-      phone: "",
+        subject: formData.course,
 
-      course: "",
+        message: formData.message
 
-      message: "",
+      };
 
-    });
 
-    setErrors({});
+
+      const response = await fetch('http://localhost:5001/api/contact', {
+
+        method: 'POST',
+
+        headers: {
+
+          'Content-Type': 'application/json',
+
+        },
+
+        body: JSON.stringify(submitData),
+
+      });
+
+
+
+      const result = await response.json();
+
+
+
+      if (result.success) {
+
+        console.log("Contact form submitted successfully:", result.data);
+
+        setSubmitted(true);
+
+        setFormData({
+
+          name: "",
+
+          email: "",
+
+          phone: "",
+
+          course: "",
+
+          message: ""
+
+        });
+
+        setErrors({});
+
+        setTimeout(() => {
+
+          setSubmitted(false);
+
+        }, 3000);
+
+      } else {
+
+        console.error("Contact form submission failed:", result.message);
+
+        alert(result.message || 'Failed to submit contact form. Please try again.');
+
+      }
+
+    } catch (error) {
+
+      console.error("Network error:", error);
+
+      alert('Network error. Please check your connection and try again.');
+
+    }
 
   };
+
+  //     email: "",
+
+  //     phone: "",
+
+  //     course: "",
+
+  //     message: "",
+
+  //   });
+
+  //   setErrors({});
+
+  // };
 
 
 

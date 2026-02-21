@@ -1,7 +1,6 @@
 import React from "react";
 
 import {
-
   Calendar,
 
   Clock,
@@ -37,7 +36,6 @@ export default function Courses({ courseType }) {
     {
 
       id: 1,
-
       title: "Graphic Designing",
 
       subtitle: "Visual Communication Program",
@@ -51,11 +49,6 @@ export default function Courses({ courseType }) {
       students: "2,450+",
 
       rating: 4.8,
-
-      price: "₹24,999",
-
-      originalPrice: "₹49,999",
-
       badge: "POPULAR",
 
       color: "blue",
@@ -70,9 +63,37 @@ export default function Courses({ courseType }) {
 
       id: 2,
 
+      title: "Visual Designer",
+
+      subtitle: "Digital Interface Design Program",
+
+      duration: "3 Months",
+
+      hours: "2 Hours/day",
+
+      level: "Beginner to Advanced",
+
+      students: "1,800+",
+
+      rating: 4.7,
+
+      badge: "TRENDING",
+
+      color: "blue",
+
+      features: ["Typography", "Color Theory", "Layout Design", "UI Principles"],
+
+      tools: ["Figma", "Sketch", "Adobe Xd"]
+
+    },
+
+    {
+
+      id: 4,
+
       title: "Digital Marketing",
 
-      subtitle: "Digital Design Program",
+      subtitle: "Digital Marketing Program",
 
       duration: "4 Months",
 
@@ -84,19 +105,98 @@ export default function Courses({ courseType }) {
 
       rating: 4.9,
 
-      price: "₹34,999",
-
-      originalPrice: "₹69,999",
-
       badge: "ADVANCED",
 
       color: "indigo",
 
-      features: ["UI/UX Design", "Figma", "Prototyping", "User Research"],
+      features: ["SEO & SEM", "Content Strategy", "Google Analytics", "Email Marketing"],
 
-      tools: ["Figma", "Sketch", "Adobe Xd", "InVision"]
+      tools: ["Google Ads", "Analytics", "Mailchimp", "SEMrush"]
 
-    }
+    },
+
+    {
+
+      id: 5,
+
+      title: "SEO - Marketing",
+
+      subtitle: "Search Engine Optimization Program",
+
+      duration: "3 Months",
+
+      hours: "2 Hours/day",
+
+      level: "Intermediate",
+
+      students: "1,600+",
+
+      rating: 4.7,
+
+      badge: "IN DEMAND",
+
+      color: "indigo",
+
+      features: ["On-Page SEO", "Off-Page SEO", "Technical SEO", "Analytics"],
+
+      tools: ["Google Analytics", "SEMrush", "Ahrefs"]
+
+    },
+
+    {
+
+      id: 6,
+
+      title: "Content Marketing",
+
+      subtitle: "Content Strategy Program",
+
+      duration: "3 Months",
+
+      hours: "2 Hours/day",
+
+      level: "Intermediate",
+
+      students: "1,400+",
+
+      rating: 4.6,
+
+      badge: "TRENDING",
+
+      color: "indigo",
+
+      features: ["Content Strategy", "Blog Writing", "Email Marketing", "Content Analytics"],
+
+      tools: ["Google Analytics", "Mailchimp", "Canva"]
+
+    },
+    {
+
+      id: 7,
+
+      title: "Print Designer",
+
+      subtitle: "Print Strategy Program",
+
+      duration: "2 Months",
+
+      hours: "1 Hours/day",
+
+      level: "Beginner to Advanced",
+
+      students: "400+",
+
+      rating: 4.3,
+
+      badge: "TRENDING",
+
+      color: "indigo",
+
+      features: ["Blog Writing", "Email Marketing", "Content Analytics"],
+
+      tools: ["Google Analytics", "Mailchimp", "Canva"]
+
+    },
 
   ];
 
@@ -104,14 +204,19 @@ export default function Courses({ courseType }) {
 
   const handleEnrollNow = (course) => {
     if (window.openEnquiryModal) {
-      window.openEnquiryModal('courses-enrollment');
+      window.openEnquiryModal('course-enrollment');
     }
   };
 
   const filteredCourses = courseType
-
-    ? courses.filter(course => course.title.toLowerCase().includes(courseType.split('-').join(' ')))
-
+    ? courses.filter(course => {
+        if (courseType === "graphic-designing") {
+          return course.title.toLowerCase().includes("graphic") ||
+                 course.title.toLowerCase().includes("visual")
+                 || course.title.toLowerCase().includes("print")
+        }
+        return course.title.toLowerCase().includes(courseType.split('-').join(' '));
+      })
     : courses;
 
 
@@ -120,51 +225,33 @@ export default function Courses({ courseType }) {
 
     <div className="w-full bg-gray-50 py-16">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl xl:max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
 
+        <div className="text-center mb-16">
 
-
-        {/* HEADER */}
-
-        <div className="text-center mb-12">
-
-          <h1 className="text-4xl md:text-5xl font-bold text-[#1e3a8a] mb-4">
-
+          <h1 className="text-5xl md:text-4xl font-bold text-blue-900 mb-6 bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] bg-clip-text text-transparent bg-clip-text">
             Our Courses
-
           </h1>
 
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-
-            Master professional design skills and build amazing digital experiences with industry-standard tools
-
+          <p className="text-lg md:text-md text-gray-500 font-extralight max-w-4xl mx-auto">
+            Master professional skills and build amazing digital experiences with industry-standard tools
           </p>
 
         </div>
 
-
-
-        {/* COURSES GRID */}
-
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 mb-12">
 
           {filteredCourses.map((course) => (
 
             <div key={course.id} className="group">
 
 
+              <div className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-blue-300 group">
 
-              {/* MAIN CARD */}
-
-              <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200">
-
-
-
-                {/* TOP SECTION WITH CLIP PATH */}
 
                 <div className={`relative ${course.color === 'blue' ? 'bg-[#1e3a8a]' : 'bg-[#4338ca]'
 
-                  } p-8`}>
+                  } p-6`}>
 
 
 
@@ -183,9 +270,6 @@ export default function Courses({ courseType }) {
                   </div>
 
 
-
-                  {/* BADGE */}
-
                   <div className="absolute top-4 right-4">
 
                     <div className="bg-yellow-400 text-black px-3 py-1 rounded-full text-xs font-bold">
@@ -196,10 +280,6 @@ export default function Courses({ courseType }) {
 
                   </div>
 
-
-
-                  {/* COURSE INFO */}
-
                   <div className="text-white relative z-10">
 
                     <div className="flex items-start justify-between mb-6">
@@ -208,13 +288,11 @@ export default function Courses({ courseType }) {
 
                         <h2 className="text-2xl font-bold mb-1">{course.title}</h2>
 
-                        <p className="text-white/80 text-sm">{course.subtitle}</p>
+                        <p className="text-white/80  text-sm">{course.subtitle}</p>
 
                       </div>
 
 
-
-                      {/* RATING */}
 
                       <div className="flex items-center gap-1 bg-white/20 backdrop-blur-sm px-3 py-2 rounded-lg">
 
@@ -227,8 +305,6 @@ export default function Courses({ courseType }) {
                     </div>
 
 
-
-                    {/* STATS */}
 
                     <div className="grid grid-cols-3 gap-4">
 
@@ -264,159 +340,93 @@ export default function Courses({ courseType }) {
 
 
 
-                {/* CONTENT SECTION */}
-
-                <div className="p-6">
-
-
-
-                  {/* FEATURES */}
-
-                  <div className="mb-6">
-
-                    <h3 className="font-semibold text-gray-800 mb-3 flex items-center gap-2">
-
+                <div className="p-4">
+                  <div className="mb-4">
+                    <h3 className="font-semibold text-gray-800 mb-2 flex items-center gap-2">
                       <Target className="w-4 h-4 text-[#1e3a8a]" />
-
                       What You'll Learn:
-
                     </h3>
-
-                    <div className="space-y-2">
-
+                    <div className="flex flex-wrap gap-1">
                       {course.features.map((feature, index) => (
-
-                        <div key={index} className="flex items-center gap-2">
-
-                          <div className="w-2 h-2 bg-[#3b82f6] rounded-full"></div>
-
-                          <span className="text-sm text-gray-600">{feature}</span>
-
+                        <div key={index} className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-md">
+                          <div className="w-1.5 h-1.5 bg-[#3b82f6] rounded-full"></div>
+                          <span className="text-xs text-gray-600">{feature}</span>
                         </div>
-
                       ))}
-
                     </div>
-
                   </div>
 
-
-
-                  {/* TOOLS */}
-
-                  <div className="mb-6">
-
-                    <p className="text-xs text-gray-500 mb-2">Design Tools You'll Master:</p>
-
-                    <div className="flex gap-2 flex-wrap">
-
+                  <div className="mb-4">
+                    <p className="text-xs text-gray-500 mb-2">Tools You'll Master:</p>
+                    <div className="flex gap-1 flex-wrap">
                       {course.tools.map((tool, index) => (
-
                         <div key={index} className={`${course.color === 'blue'
-
-                            ? tool === 'Ai' ? 'bg-red-100 text-red-600'
-
-                              : tool === 'Ps' ? 'bg-blue-100 text-blue-600'
-
-                                : 'bg-indigo-100 text-indigo-600'
-
-                            : tool === 'Figma' ? 'bg-purple-100 text-purple-600'
-
-                              : tool === 'Sketch' ? 'bg-orange-100 text-orange-600'
-
-                                : tool === 'Adobe Xd' ? 'bg-pink-100 text-pink-600'
-
-                                  : 'bg-blue-100 text-blue-600'
-
-                          } px-3 py-1 rounded-lg text-xs font-bold`}>
-
+                          ? tool === 'Ai' ? 'bg-red-100 text-red-600'
+                            : tool === 'Ps' ? 'bg-blue-100 text-blue-600'
+                              : tool === 'Lr' ? 'bg-green-100 text-green-600'
+                                : tool === 'Figma' ? 'bg-purple-100 text-purple-600'
+                                  : tool === 'Sketch' ? 'bg-orange-100 text-orange-600'
+                                    : tool === 'Adobe Xd' ? 'bg-pink-100 text-pink-600'
+                                      : tool === 'InDesign' ? 'bg-indigo-100 text-indigo-600'
+                                        : tool === 'Acrobat' ? 'bg-red-100 text-red-600'
+                                          : 'bg-blue-100 text-blue-600'
+                          : tool === 'Google Analytics' ? 'bg-orange-100 text-orange-600'
+                            : tool === 'SEMrush' ? 'bg-green-100 text-green-600'
+                              : tool === 'Ahrefs' ? 'bg-blue-100 text-blue-600'
+                                : tool === 'Screaming Frog' ? 'bg-red-100 text-red-600'
+                                  : tool === 'Analytics' ? 'bg-blue-100 text-blue-600'
+                                    : tool === 'Mailchimp' ? 'bg-yellow-100 text-yellow-600'
+                                      : tool === 'Google Ads' ? 'bg-green-100 text-green-600'
+                                        : tool === 'Canva' ? 'bg-purple-100 text-purple-600'
+                                          : tool === 'Grammarly' ? 'bg-green-100 text-green-600'
+                                            : 'bg-blue-100 text-blue-600'
+                          } px-2 py-1 rounded-md text-xs font-bold`}>
                           {tool}
-
                         </div>
-
                       ))}
-
                     </div>
-
                   </div>
-
-
-
-                  {/* PRICE AND CTA */}
 
                   <div className="flex items-center justify-between">
-
                     <div>
-
-                      <div className="flex items-baseline gap-2">
-
-                        <span className="text-2xl font-bold text-gray-900">{course.price}</span>
-
-                        <span className="text-sm text-gray-400 line-through">{course.originalPrice}</span>
-
-                      </div>
-
-                      <p className="text-xs text-green-600 font-semibold">Save 50% - Limited Time!</p>
-
+                      {course.price && (
+                        <>
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-xl font-bold text-gray-900">{course.price}</span>
+                            <span className="text-sm text-gray-400 line-through">{course.originalPrice}</span>
+                          </div>
+                          <p className="text-xs text-green-600 font-semibold">Save 50% - Limited Time!</p>
+                        </>
+                      )}
                     </div>
 
-
-
-                    <button 
+                    <button
                       onClick={() => handleEnrollNow(course)}
-                      className="bg-[#3b82f6] text-white font-bold px-6 py-3 rounded-lg hover:bg-[#1e3a8a] transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2"
+                      className="bg-gradient-to-r from-[#3b82f6] to-[#2563eb] hover:from-[#1e3a8a] hover:to-blue-500 text-white font-bold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-105 flex items-center gap-2"
                     >
-
                       <Download className="w-4 h-4" />
-
                       Enroll Now
-
                     </button>
-
                   </div>
-
                 </div>
-
               </div>
-
-
-
-              {/* HOVER CARD */}
 
               <div className="mt-4 bg-gray-100 rounded-xl p-4 border border-gray-200 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-
                 <div className="flex items-center justify-between">
-
                   <div className="flex items-center gap-2">
-
                     <Award className="w-5 h-5 text-yellow-500" />
-
                     <span className="text-sm font-semibold text-gray-700">Certificate Included</span>
-
                   </div>
 
                   <div className="flex items-center gap-2">
-
                     <div className="w-2 h-2 bg-[#3b82f6] rounded-full"></div>
-
                     <span className="text-sm text-gray-600">Portfolio Building</span>
-
                   </div>
-
                 </div>
-
               </div>
-
-
-
             </div>
-
           ))}
-
         </div>
-
-
-
         {/* BOTTOM CTA */}
 
         {/* <div className="bg-[#1e3a8a] rounded-2xl p-8 text-white text-center">
@@ -450,14 +460,9 @@ export default function Courses({ courseType }) {
           </div>
 
         </div>
-
          */}
-
       </div>
-
     </div>
-
   );
-
 }
 

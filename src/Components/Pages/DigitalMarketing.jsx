@@ -169,14 +169,14 @@ export default function DigitalMarketing() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-cover scroll-smooth bg-center bg-no-repeat py-40 px-6" style={{ backgroundImage: `url('https://images.pexels.com/photos/8127694/pexels-photo-8127694.jpeg')` }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
+      <section className="bg-cover scroll-smooth relative bg-center bg-no-repeat" style={{ backgroundImage: `url('https://images.pexels.com/photos/8127694/pexels-photo-8127694.jpeg')` }}>
+        <div className="max-w-8xl pt-40 px-10  h-screen mx-auto">
+          <div className="grid md:grid-cols-2  gap-12 items-center">
+            <div className=' h-full'>
               <h1 className="text-4xl md:text-5xl font-bold text-blue-500 mb-6 animate-fade-in-up">
                 Digital Marketing <br /> Master Course
               </h1>
-              <p className="text-lg text-blue-900 mb-8 animate-fade-in-up animate-stagger-1">
+              <p className="text-lg text-blue-600 mb-8 animate-fade-in-up animate-stagger-1">
                 Master the art of digital marketing with industry-relevant skills and real-world projects
               </p>
               <div className="flex gap-4 mb-8 animate-fade-in-up animate-stagger-2">
@@ -188,12 +188,12 @@ export default function DigitalMarketing() {
                 </button>
                 <button 
                   onClick={handleDownloadSyllabus}
-                  className="border-2 border-[#1e3a8a] text-[#1e3a8a] px-8 py-4 rounded-xl font-bold hover:bg-[#1e3a8a] hover:text-white transition"
+                  className="border-1 border-[#1e3a8a] text-[#1e3a8a] px-8 py-4 rounded-xl font-bold hover:bg-[#1e3a8a] hover:text-white transition"
                 >
                   Download Syllabus
                 </button>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 animate-fade-in-up animate-stagger-3">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 animate-fade-in-up animate-stagger-3">
                 <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
                   <div className="text-2xl sm:text-3xl font-bold text-white">3 Months</div>
                   <div className="text-blue-100 text-sm sm:text-base">Duration</div>
@@ -206,7 +206,7 @@ export default function DigitalMarketing() {
                   <div className="text-2xl sm:text-3xl font-bold text-white">₹18,999</div>
                   <div className="text-blue-100 text-sm sm:text-base">Fee</div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="animate-fade-in-right">
             </div>
@@ -219,7 +219,7 @@ export default function DigitalMarketing() {
 
       <Companies companies={digitalMarketingCompanies} />
 
-      <Courses />
+      <Courses courseType="marketing" />
 
       <Placement courseType="digital-marketing" />
 
@@ -231,7 +231,7 @@ export default function DigitalMarketing() {
 
       {/* <CTASection courseType="digital-marketing" /> */}
 
-      <Corroboration courseType="digital-marketing" />
+      {/* <Corroboration courseType="digital-marketing" /> */}
 
       <Review reviews={digitalMarketingReviews} />
 

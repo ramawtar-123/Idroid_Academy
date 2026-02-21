@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { X, Mail, Phone, User, MessageSquare, Send, Briefcase, GraduationCap } from "lucide-react";
 
-export default function EnquiryModal({ isOpen, onClose }) {
+export default function EnquiryModal({ isOpen, onClose, purpose = 'general' }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,7 +29,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
 
@@ -38,22 +38,57 @@ export default function EnquiryModal({ isOpen, onClose }) {
       return;
     }
 
-    console.log("Enquiry Form:", formData);
-    setSubmitted(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      course: "",
-      qualification: "",
-      experience: "",
-      message: ""
-    });
-    setErrors({});
-    setTimeout(() => {
-      setSubmitted(false);
-      onClose();
-    }, 3000);
+    try {
+      const submitData = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        course: formData.course.trim(),
+        courseType: formData.course.trim() || 'general',
+        message: formData.message.trim(),
+        source: 'website'
+      };
+
+      // Use different API endpoints based on purpose
+      const apiUrl = purpose === 'course-enrollment' 
+        ? 'http://localhost:5001/api/enrollment' 
+        : 'http://localhost:5001/api/enquiry';
+
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submitData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        console.log("Enquiry submitted successfully:", result.data);
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          course: "",
+          qualification: "",
+          experience: "",
+          message: ""
+        });
+        setErrors({});
+        setTimeout(() => {
+          setSubmitted(false);
+          onClose();
+        }, 3000);
+      } else {
+        console.error("Enquiry submission failed:", result.message);
+        alert(result.message || 'Failed to submit enquiry. Please try again.');
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert('Network error. Please check your connection and try again.');
+    }
   };
 
   if (!isOpen) return null;
@@ -73,8 +108,15 @@ export default function EnquiryModal({ isOpen, onClose }) {
           <div className="flex items-center gap-3">
             <MessageSquare className="w-8 h-8" />
             <div>
-              <h2 className="text-2xl font-bold">Quick Enquiry</h2>
-              <p className="text-green-100">Get your course-related questions answered</p>
+              <h2 className="text-2xl font-bold">
+                {purpose === 'course-enrollment' ? 'Course Enrollment' : 'Quick Enquiry'}
+              </h2>
+              <p className="text-green-100">
+                {purpose === 'course-enrollment' 
+                  ? 'Complete your course enrollment in just a few steps' 
+                  : 'Get your course-related questions answered'
+                }
+              </p>
             </div>
           </div>
         </div>
@@ -235,7 +277,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                 type="submit"
                 className="w-full bg-gradient-to-r from-blue-800 to-blue-700 text-white font-bold py-4 rounded-xl flex justify-center items-center gap-2 hover:from-blue-700 hover:to-blue-600 transition transform hover:scale-105 shadow-lg"
               >
-                Submit Enquiry <Send size={18} />
+                {purpose === 'course-enrollment' ? 'Complete Enrollment' : 'Submit Enquiry'} <Send size={18} />
               </button>
             </form>
           )}

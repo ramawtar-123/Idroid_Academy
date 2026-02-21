@@ -5,11 +5,11 @@ export default function CTASection() {
     }
   };
 
-  const handleDownloadSyllabus = () => {
-    if (window.openLoginModal) {
-      window.openLoginModal('cta-syllabus');
-    }
-  };
+  // const handleDownloadSyllabus = () => {
+  //   if (window.openLoginModal) {
+  //     window.openLoginModal('cta-syllabus');
+  //   }
+  // };
 
   return (
     <section className="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white py-12 text-center">
@@ -24,12 +24,12 @@ export default function CTASection() {
         >
           Enquire Now
         </button>
-        <button 
+        {/* <button 
           onClick={handleDownloadSyllabus}
           className="border border-white text-white px-6 py-3 rounded-lg hover:bg-white hover:text-[#1e3a8a] transition transform hover:scale-105"
         >
           Download Syllabus
-        </button>
+        </button> */}
       </div>
     </section>
   );

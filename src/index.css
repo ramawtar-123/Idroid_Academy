@@ -1,6 +1,6 @@
 @import "tailwindcss";
 *{
-  font-family: 'Google Sans', sans-serif;
+  font-family: "poppins", sans-serif;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -143,4 +143,12 @@
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+.Hero {
+  background-image: url('/Hero.webp');
+  background-size: cover;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

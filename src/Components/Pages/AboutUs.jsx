@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube, Users, Award, Target, BookOpen, Briefcase, ChevronRight } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin, Youtube, Users, Award, Target, BookOpen, Briefcase, ChevronRight, Star } from 'lucide-react';
 import Layout from '../Layout';
 import FAQSection from '../FAQSection';
 
@@ -10,6 +10,89 @@ export default function AboutUs() {
     { number: "0+", label: "Industry Partners", icon: "🤝" },
     { number: "0%", label: "Placement Rate", icon: "🎯" },
     { number: "★", label: "Student Rating", icon: "⭐" }
+  ];
+
+  const teamData = [
+    {
+      id: 'raj-sharma-001',
+      imageUrl: 'https://media.istockphoto.com/id/1498456427/photo/headshot-of-happy-young-businessman.jpg?s=612x612&w=0&k=20&c=P7CV5e6C2rbuNh4WuTQBN9gP8hW-WYWFrVLWmpx5UsI=',
+      name: 'Raj Sharma',
+      role: 'Senior Design Instructor',
+      experience: '8+ Years',
+      rating: '4.9',
+      linkedin: 'https://linkedin.com/in/rajsharma',
+      skills: ['Adobe Photoshop', 'UI/UX Design', 'Branding', 'Figma', 'Illustrator']
+    },
+    {
+      id: 'priya-patel-002',
+      imageUrl: 'https://png.pngtree.com/png-vector/20240205/ourmid/pngtree-professional-women-working-in-laptop-png-image_11720146.png',
+      name: 'Priya Patel',
+      role: 'Digital Marketing Lead',
+      experience: '6+ Years',
+      rating: '4.8',
+      linkedin: 'https://linkedin.com/in/priyapatel',
+      skills: ['SEO', 'Google Ads', 'Content Strategy', 'Analytics', 'Social Media']
+    },
+    {
+      id: 'amit-kumar-003',
+      imageUrl: 'https://thumbs.dreamstime.com/b/portrait-charming-imposing-kid-private-school-boy-feel-glad-ready-work-worker-want-be-cool-professional-look-hear-wear-blazer-152393107.jpg',
+      name: 'Amit Kumar',
+      role: 'Video Editing Expert',
+      experience: '7+ Years',
+      rating: '4.9',
+      linkedin: 'https://linkedin.com/in/amitkumar',
+      skills: ['Premiere Pro', 'After Effects', 'Motion Graphics', 'Color Grading']
+    },
+    {
+      id: 'neha-verma-004',
+      imageUrl: 'https://png.pngtree.com/png-vector/20241217/ourmid/pngtree-woman-standing-holding-a-laptop-png-image_14741391.png',
+      name: 'Neha Verma',
+      role: 'UI/UX Specialist',
+      experience: '5+ Years',
+      rating: '4.7',
+      linkedin: 'https://linkedin.com/in/nehuverma',
+      skills: ['Figma', 'Adobe XD', 'Prototyping', 'User Research', 'Design Systems']
+    },
+    {
+      id: 'vikram-singh-005',
+      imageUrl: 'https://www.shutterstock.com/image-photo/young-confident-handsome-man-full-260nw-1416442523.jpg',
+      name: 'Vikram Singh',
+      role: 'Web Development Instructor',
+      experience: '9+ Years',
+      rating: '4.8',
+      linkedin: 'https://linkedin.com/in/vikramsingh',
+      skills: ['React', 'Node.js', 'JavaScript', 'MongoDB', 'Express.js']
+    },
+    {
+      id: 'anita-joshi-006',
+      imageUrl: 'https://png.pngtree.com/png-vector/20250906/ourmid/pngtree-smiling-businesswoman-holding-a-laptop-isolated-on-transparent-background-png-image_17372652.webp',
+      name: 'Anita Joshi',
+      role: 'Content Marketing Head',
+      experience: '6+ Years',
+      rating: '4.9',
+      linkedin: 'https://linkedin.com/in/anitajoshi',
+      skills: ['Content Strategy', 'Copywriting', 'Email Marketing', 'SEO Writing']
+    },
+    {
+      id: 'rohit-mehta-007',
+      imageUrl: 'https://static.vecteezy.com/system/resources/thumbnails/033/129/417/small/a-business-man-stands-against-white-background-with-his-arms-crossed-ai-generative-photo.jpg',
+      name: 'Rohit Mehta',
+      role: 'Graphic Design Mentor',
+      experience: '10+ Years',
+      rating: '5.0',
+      linkedin: 'https://linkedin.com/in/rohitmehta',
+      skills: ['Brand Design', 'Logo Design', 'Typography', 'Print Design', 'Creative Direction']
+    },
+    {
+      id: 'kavita-nair-008',
+      imageUrl: 'https://static.vecteezy.com/system/resources/thumbnails/055/397/684/small/business-woman-with-laptop-png.png',
+      name: 'Kavita Nair',
+      role: 'Social Media Expert',
+      experience: '4+ Years',
+      rating: '4.6',
+      linkedin: 'https://linkedin.com/in/kavitanair',
+      skills: ['Instagram Marketing', 'Facebook Ads', 'Influencer Marketing', 'Community Management']
+    }
   ];
 
   const values = [
@@ -151,21 +234,53 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-white">
-        <div className="max-w-8xl mx-auto px-6 p-6 bg-blue-50">
+      {/* Stats Section - Normal Style */}
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Our Achievements</h2>
             <p className="text-gray-600">Transforming careers through excellence in digital education</p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 justify-items-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-white rounded-full p-4 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group flex flex-col items-center justify-center text-center w-[140px] sm:w-[160px] lg:w-[180px] h-[140px] sm:h-[160px] lg:h-[180px]">
-                <div className="text-xl sm:text-2xl lg:text-2xl font-semibold text-blue-600 mb-2">{stat.number}</div>
-                <div className="text-xs sm:text-sm lg:text-base font-extralight text-gray-700 text-center px-1">{stat.label}</div>
-                {/* <div className="w-full bg-gradient-to-r from-blue-400 to-blue-600 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-500 mt-3"></div> */}
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
+                <div className="text-gray-700">{stat.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vision & Mission Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Vision */}
+            <div className="text-center md:text-left">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-6">
+                <Target className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Vision</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To be the leading digital education institute that empowers students with cutting-edge skills, 
+                fostering innovation and excellence in the digital world. We envision a future where every 
+                student becomes a successful professional in their chosen field.
+              </p>
+            </div>
+
+            {/* Mission */}
+            <div className="text-center md:text-left">
+              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto md:mx-0 mb-6">
+                <Award className="w-8 h-8 text-green-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Our Mission</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To provide industry-relevant education through expert faculty, practical training, and 
+                personalized mentorship. We are committed to bridging the gap between academic learning 
+                and industry requirements, ensuring 100% placement and career success for our students.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -241,6 +356,77 @@ export default function AboutUs() {
                   Learn More
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a8a] mb-4">
+              Meet Our Team
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Learn from industry experts with years of experience
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {teamData.map((member, index) => (
+              <div key={member.id} className="relative group overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-gray-300">
+                <div className="relative p-4">
+                  {/* Team Member Image */}
+                  <div className="relative">
+                    <img 
+                      src={member.imageUrl} 
+                      alt={member.name} 
+                      className="w-full h-64 object-cover rounded-xl"
+                    />
+
+                    {/* Experience Badge */}
+                    <div className="absolute top-4 left-4 bg-black/70 text-white text-sm font-semibold px-3 py-1 rounded-full backdrop-blur-sm border border-white/20">
+                      {member.experience}
+                    </div>
+
+                    {/* Social Links */}
+                    <div className="absolute top-4 right-4 flex gap-2">
+                      {member.linkedin && (
+                        <a href={member.linkedin} className="bg-black/70 text-white p-2 rounded-full transition-colors hover:bg-blue-600 backdrop-blur-sm border border-white/20">
+                          <Linkedin className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Team Member Info */}
+                  <div className="mt-4">
+                    <div className="flex justify-between items-start">
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-gray-900 truncate">{member.name}</h3>
+                        <p className="text-sm text-gray-600 mt-1">{member.role}</p>
+                      </div>
+                      <div className="flex items-center gap-1 text-yellow-500">
+                        <Star className="w-4 h-4 fill-current" />
+                        <span className="text-sm text-gray-700">{member.rating}</span>
+                      </div>
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap gap-1">
+                      {member.skills.slice(0, 3).map((skill, skillIndex) => (
+                        <span key={skillIndex} className="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded-full">
+                          {skill}
+                        </span>
+                      ))}
+                      {member.skills.length > 3 && (
+                        <span className="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">
+                          +{member.skills.length - 3}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

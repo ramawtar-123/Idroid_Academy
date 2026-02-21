@@ -30,7 +30,7 @@ export default function AcademicLife() {
         <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-[#1e3a8a]">
           Academic Life
         </h2>
-        <p className="text-gray-600 mb-12 text-md font-extralight max-w-2xl mx-auto">
+        <p className="text-gray-600 mb-12 text-lg font-extralight max-w-2xl mx-auto">
           Experience the vibrant academic environment at Idroid Academy
         </p>
 

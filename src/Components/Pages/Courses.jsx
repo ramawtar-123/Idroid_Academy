@@ -9,7 +9,7 @@ export default function Courses() {
       level: "Beginner to Advanced",
       description: "Master visual communication with industry-standard tools",
       features: ["Adobe Creative Suite", "Typography", "Brand Design", "Digital Illustration"],
-      price: "₹15,999"
+      // price: "₹15,999"
     },
     {
       title: "UI/UX Designing", 
@@ -17,7 +17,7 @@ export default function Courses() {
       level: "Intermediate",
       description: "Create beautiful and functional user interfaces",
       features: ["Figma", "User Research", "Prototyping", "Design Systems"],
-      price: "₹19,999"
+      // price: "₹19,999"
     },
     {
       title: "Video Editing",
@@ -25,7 +25,7 @@ export default function Courses() {
       level: "Beginner",
       description: "Learn professional video editing techniques",
       features: ["Premiere Pro", "After Effects", "Color Grading", "Motion Graphics"],
-      price: "₹12,999"
+      // price: "₹12,999"
     },
     {
       title: "Advanced Program",
@@ -33,7 +33,7 @@ export default function Courses() {
       level: "Advanced", 
       description: "Comprehensive program covering all aspects",
       features: ["All Tools", "Portfolio Building", "Placement Support", "Industry Projects"],
-      price: "₹29,999"
+      // price: "₹29,999"
     }
   ];
 
@@ -60,7 +60,7 @@ export default function Courses() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-white py-16 px-6">
+      {/* <section className="bg-white py-16 px-6">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { number: "500+", label: "Students Placed" },
@@ -74,7 +74,7 @@ export default function Courses() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Courses Grid */}
       <section className="bg-gray-50 py-20 px-6">
@@ -114,7 +114,7 @@ export default function Courses() {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-2xl font-bold text-[#1e3a8a]">{course.price}</div>
-                      <div className="text-sm text-gray-500">One-time payment</div>
+                      {/* <div className="text-sm text-gray-500">One-time payment</div> */}
                     </div>
                     <button className="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition transform hover:scale-105">
                       Enroll Now

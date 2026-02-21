@@ -30,7 +30,7 @@ export default function BookDemoModal({ isOpen, onClose }) {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const validationErrors = validate();
 
@@ -39,22 +39,52 @@ export default function BookDemoModal({ isOpen, onClose }) {
       return;
     }
 
-    console.log("Demo Booking:", formData);
-    setSubmitted(true);
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      course: "",
-      preferredDate: "",
-      preferredTime: "",
-      message: ""
-    });
-    setErrors({});
-    setTimeout(() => {
-      setSubmitted(false);
-      onClose();
-    }, 3000);
+    try {
+      const submitData = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        course: formData.course.trim(),
+        subject: `Demo Booking - ${formData.course.trim()}`,
+        message: `Preferred Date: ${formData.preferredDate.trim()}\nPreferred Time: ${formData.preferredTime.trim()}\n\n${formData.message.trim()}`,
+        source: 'website'
+      };
+
+      const response = await fetch('http://localhost:5001/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(submitData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        console.log("Demo booking submitted successfully:", result.data);
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          course: "",
+          preferredDate: "",
+          preferredTime: "",
+          message: ""
+        });
+        setErrors({});
+        setTimeout(() => {
+          setSubmitted(false);
+          onClose();
+        }, 3000);
+      } else {
+        console.error("Demo booking failed:", result.message);
+        alert(result.message || 'Failed to book demo. Please try again.');
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert('Network error. Please check your connection and try again.');
+    }
   };
 
   if (!isOpen) return null;

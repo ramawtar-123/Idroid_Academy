@@ -23,9 +23,7 @@ export default function GraphicDesignCourse() {
         hours: "2 Hours/day",
         level: "Beginner",
         students: "1,500+",
-        rating: 4.8,
-        price: "₹15,999",
-        originalPrice: "₹29,999",
+        rating: "4.8",
         badge: "POPULAR",
         color: "blue",
         features: ["Adobe Creative Suite", "UI/UX Design", "Brand Design", "Portfolio Development"],
@@ -41,10 +39,9 @@ export default function GraphicDesignCourse() {
   };
    
   const graphicDesignStats = [
-    { number: "800+", label: "Graphics Students" },
+    { number: "100+", label: "Graphics Students" },
     { number: "92%", label: "Placement Rate" },
-    { number: "4.9★", label: "Average Rating" },
-    { number: "60+", label: "Hiring Partners" }
+    { number: "4.2★", label: "Average Rating" }
   ];
 
   const graphicDesignCompanies = [
@@ -169,14 +166,14 @@ export default function GraphicDesignCourse() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-cover scroll-smooth bg-center bg-no-repeat py-28 px-6" style={{ backgroundImage: `url('https://images.pexels.com/photos/12899094/pexels-photo-12899094.jpeg')` }}>
+      <section className="bg-cover scroll-smooth bg-center bg-no-repeat py-40 px-6" style={{ backgroundImage: `url('https://images.pexels.com/photos/12899094/pexels-photo-12899094.jpeg')` }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-blue-500 mb-6 animate-fade-in-up">
+              <h1 className="text-4xl md:text-5xl font-bold text-white/70 mb-6 animate-fade-in-up">
                 Graphic Designing <br /> Master Course
               </h1>
-              <p className="text-lg text-blue-900 mb-8 animate-fade-in-up animate-stagger-1">
+              <p className="text-lg font-extralight text-black/70 mb-8 animate-fade-in-up animate-stagger-1">
                 Master the art of visual communication with industry-standard tools and techniques
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up animate-stagger-2">
@@ -188,12 +185,12 @@ export default function GraphicDesignCourse() {
                 </button>
                 <button 
                   onClick={handleDownloadSyllabus}
-                  className="border-2 border-[#1e3a8a] text-[#1e3a8a] px-8 py-4 rounded-xl font-bold hover:bg-[#1e3a8a] hover:text-white transition"
+                  className="border-1 border-[#1e3a8a] text-white/80 px-8 py-4 rounded-xl font-bold hover:bg-[#1e3a8a] hover:text-white transition"
                 >
                   Download Syllabus
                 </button>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 animate-fade-in-up animate-stagger-3">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 animate-fade-in-up animate-stagger-3">
                 <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
                   <div className="text-2xl sm:text-3xl font-bold text-white">3 Months</div>
                   <div className="text-blue-100 text-sm sm:text-base">Duration</div>
@@ -206,7 +203,7 @@ export default function GraphicDesignCourse() {
                   <div className="text-2xl sm:text-3xl font-bold text-white">₹15,999</div>
                   <div className="text-blue-100 text-sm sm:text-base">Fee</div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="animate-fade-in-right">
             </div>
@@ -221,7 +218,7 @@ export default function GraphicDesignCourse() {
       <Tools tools={graphicDesignTools} />
       <Highlights highlights={graphicDesignHighlights} courseType="graphic-designing" />
       <Careers careers={graphicDesignCareers} />
-      <Corroboration courseType="graphic-designing" />
+      {/* <Corroboration courseType="graphic-designing" /> */}
       <Review reviews={graphicDesignReviews} />
       <FAQSection 
         faqData={graphicDesignFAQ} 
