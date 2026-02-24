@@ -180,12 +180,12 @@ const ProfessionalCourses = ({ courseType = "default" }) => {
           {/* Auto-scrolling cards container */}
           <div className="relative">
             {/* Gradient overlays for smooth fade effect */}
-            <div className="absolute left-0 top-0 bottom-0 w-20 z-20 bg-gradient-to-r from-gray-50 to-transparent"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-20 z-20 bg-gradient-to-l from-blue-50 to-transparent"></div>
+            {/* <div className="absolute left-0 top-0 bottom-0 w-20 z-20 bg-gradient-to-r from-gray-50 to-transparent"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 z-20 bg-gradient-to-l from-blue-50 to-transparent"></div> */}
 
             {/* Scrolling container */}
             <div className="overflow-hidden">
-              <div className="flex gap-6 p-2 animate-scroll">
+              <div className="flex gap-4 p-2 animate-scroll">
                 {/* Duplicate cards for seamless loop */}
                 {[...jobRoles, ...jobRoles].map((role, index) => (
                   <div
@@ -266,7 +266,7 @@ const ProfessionalCourses = ({ courseType = "default" }) => {
         }
         
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 10s linear infinite;
         }
         
         .animate-scroll:hover {
@@ -275,7 +275,7 @@ const ProfessionalCourses = ({ courseType = "default" }) => {
         
         @media (max-width: 768px) {
           .animate-scroll {
-            animation: scroll 10s linear infinite;
+            animation: scroll 5s linear infinite;
           }
         }
       `}</style>

@@ -40,9 +40,9 @@ export default function DigitalMarketing() {
     }
   };
   const digitalMarketingStats = [
-    { number: "500+", label: "Digital Marketing" },
-    { number: "95%", label: "Placement Rate" },
-    { number: "4.8★", label: "Average Rating" },
+    { number: "100+", label: "Digital Marketing" },
+    { number: "90%", label: "Placement Rate" },
+    { number: "4.3★", label: "Average Rating" },
     { number: "50+", label: "Hiring Partners" }
   ];
 
@@ -159,54 +159,36 @@ export default function DigitalMarketing() {
     {
       question: "Is this course suitable for beginners?",
       answer: "Yes, this course is designed for beginners and takes you from basics to advanced level."
-    },
-    {
-      question: "What is the average salary after this course?",
-      answer: "The average starting salary ranges from ₹4.5 LPA to ₹8 LPA depending on the role."
     }
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-cover scroll-smooth relative bg-center bg-no-repeat" style={{ backgroundImage: `url('https://images.pexels.com/photos/8127694/pexels-photo-8127694.jpeg')` }}>
+      <section className="bg-cover scroll-smooth bg-fixed relative bg-center bg-no-repeat" style={{ backgroundImage: `url('https://images.pexels.com/photos/8127694/pexels-photo-8127694.jpeg')` }}>
         <div className="max-w-8xl pt-40 px-10  h-screen mx-auto">
           <div className="grid md:grid-cols-2  gap-12 items-center">
-            <div className=' h-full'>
-              <h1 className="text-4xl md:text-5xl font-bold text-blue-500 mb-6 animate-fade-in-up">
+            <div className='pt-76 md:pt-36 h-full'>
+              <h1 className="text-4xl md:text-5xl font-bold text-cyan-500 mb-6 animate-fade-in-up">
                 Digital Marketing <br /> Master Course
               </h1>
-              <p className="text-lg text-blue-600 mb-8 animate-fade-in-up animate-stagger-1">
+              <p className="text-lg text-blue-800 bg-white/60 rounded-2xl p-2 mb-8 animate-fade-in-up animate-stagger-1">
                 Master the art of digital marketing with industry-relevant skills and real-world projects
               </p>
               <div className="flex gap-4 mb-8 animate-fade-in-up animate-stagger-2">
                 <button 
                   onClick={handleEnrollNow}
-                  className="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg transition transform hover:scale-105"
+                  className="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition transform hover:scale-105"
                 >
                   Enroll Now
                 </button>
                 <button 
                   onClick={handleDownloadSyllabus}
-                  className="border-1 border-[#1e3a8a] text-[#1e3a8a] px-8 py-4 rounded-xl font-bold hover:bg-[#1e3a8a] hover:text-white transition"
+                  className="border-1 border-[#1e3a8a] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#1e3a8a] hover:text-white transition"
                 >
                   Download Syllabus
                 </button>
               </div>
-              {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 animate-fade-in-up animate-stagger-3">
-                <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-                  <div className="text-2xl sm:text-3xl font-bold text-white">3 Months</div>
-                  <div className="text-blue-100 text-sm sm:text-base">Duration</div>
-                </div>
-                <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-                  <div className="text-2xl sm:text-3xl font-bold text-white">Beginner</div>
-                  <div className="text-blue-100 text-sm sm:text-base">Level</div>
-                </div>
-                <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-                  <div className="text-2xl sm:text-3xl font-bold text-white">₹18,999</div>
-                  <div className="text-blue-100 text-sm sm:text-base">Fee</div>
-                </div>
-              </div> */}
             </div>
             <div className="animate-fade-in-right">
             </div>

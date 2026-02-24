@@ -6,16 +6,16 @@ import FAQSection from '../FAQSection';
 
 export default function AboutUs() {
   const stats = [
-    { number: "0+", label: "Students Trained", icon: "👥" },
-    { number: "0+", label: "Industry Partners", icon: "🤝" },
-    { number: "0%", label: "Placement Rate", icon: "🎯" },
-    { number: "★", label: "Student Rating", icon: "⭐" }
+    { number: "100+", label: "Students Trained", icon: "👥" },
+    { number: "50+", label: "Industry Partners", icon: "🤝" },
+    { number: "4.0%", label: "Placement Rate", icon: "🎯" },
+    { number: "4.6★", label: "Student Rating", icon: "⭐" }
   ];
 
   const teamData = [
     {
       id: 'raj-sharma-001',
-      imageUrl: 'https://media.istockphoto.com/id/1498456427/photo/headshot-of-happy-young-businessman.jpg?s=612x612&w=0&k=20&c=P7CV5e6C2rbuNh4WuTQBN9gP8hW-WYWFrVLWmpx5UsI=',
+      imageUrl: 'https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_user_personalization&w=740&q=80',
       name: 'Raj Sharma',
       role: 'Senior Design Instructor',
       experience: '8+ Years',
@@ -25,7 +25,7 @@ export default function AboutUs() {
     },
     {
       id: 'priya-patel-002',
-      imageUrl: 'https://png.pngtree.com/png-vector/20240205/ourmid/pngtree-professional-women-working-in-laptop-png-image_11720146.png',
+      imageUrl: 'https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_user_personalization&w=740&q=80',
       name: 'Priya Patel',
       role: 'Digital Marketing Lead',
       experience: '6+ Years',
@@ -35,7 +35,7 @@ export default function AboutUs() {
     },
     {
       id: 'amit-kumar-003',
-      imageUrl: 'https://thumbs.dreamstime.com/b/portrait-charming-imposing-kid-private-school-boy-feel-glad-ready-work-worker-want-be-cool-professional-look-hear-wear-blazer-152393107.jpg',
+      imageUrl: 'https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_user_personalization&w=740&q=80',
       name: 'Amit Kumar',
       role: 'Video Editing Expert',
       experience: '7+ Years',
@@ -45,7 +45,7 @@ export default function AboutUs() {
     },
     {
       id: 'neha-verma-004',
-      imageUrl: 'https://png.pngtree.com/png-vector/20241217/ourmid/pngtree-woman-standing-holding-a-laptop-png-image_14741391.png',
+      imageUrl: 'https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_user_personalization&w=740&q=80',
       name: 'Neha Verma',
       role: 'UI/UX Specialist',
       experience: '5+ Years',
@@ -55,7 +55,7 @@ export default function AboutUs() {
     },
     {
       id: 'vikram-singh-005',
-      imageUrl: 'https://www.shutterstock.com/image-photo/young-confident-handsome-man-full-260nw-1416442523.jpg',
+      imageUrl: 'https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_user_personalization&w=740&q=80',
       name: 'Vikram Singh',
       role: 'Web Development Instructor',
       experience: '9+ Years',
@@ -65,7 +65,7 @@ export default function AboutUs() {
     },
     {
       id: 'anita-joshi-006',
-      imageUrl: 'https://png.pngtree.com/png-vector/20250906/ourmid/pngtree-smiling-businesswoman-holding-a-laptop-isolated-on-transparent-background-png-image_17372652.webp',
+      imageUrl: 'https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_user_personalization&w=740&q=80',
       name: 'Anita Joshi',
       role: 'Content Marketing Head',
       experience: '6+ Years',
@@ -75,7 +75,7 @@ export default function AboutUs() {
     },
     {
       id: 'rohit-mehta-007',
-      imageUrl: 'https://static.vecteezy.com/system/resources/thumbnails/033/129/417/small/a-business-man-stands-against-white-background-with-his-arms-crossed-ai-generative-photo.jpg',
+      imageUrl: 'https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_user_personalization&w=740&q=80',
       name: 'Rohit Mehta',
       role: 'Graphic Design Mentor',
       experience: '10+ Years',
@@ -85,7 +85,7 @@ export default function AboutUs() {
     },
     {
       id: 'kavita-nair-008',
-      imageUrl: 'https://static.vecteezy.com/system/resources/thumbnails/055/397/684/small/business-woman-with-laptop-png.png',
+      imageUrl: 'https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_user_personalization&w=740&q=80',
       name: 'Kavita Nair',
       role: 'Social Media Expert',
       experience: '4+ Years',
@@ -160,11 +160,11 @@ export default function AboutUs() {
     },
     {
       question: "Do you provide placement assistance?",
-      answer: "Yes, we provide 100% placement assistance with resume building, interview preparation, and direct connections to our 150+ industry partners."
+      answer: "Yes, we provide 100% placement assistance with resume building, interview preparation, and direct connections to our 50+ industry partners."
     },
     {
       question: "What is the average batch size?",
-      answer: "We maintain small batch sizes of 15-20 students to ensure personalized attention and better learning outcomes for each student."
+      answer: "We maintain small batch sizes of 25-30 students to ensure personalized attention and better learning outcomes for each student."
     },
     {
       question: "Are the instructors industry experienced?",

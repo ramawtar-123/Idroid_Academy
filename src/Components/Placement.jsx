@@ -10,249 +10,249 @@ export default function Placement({ courseType }) {
 
   const allStudents = [
 
-    {
+    // {
 
-      id: 1,
+    //   id: 1,
 
-      name: "Rahul Verma",
+    //   name: "Rahul Verma",
 
-      course: "Graphic Designing",
+    //   course: "Graphic Designing",
 
-      company: "TCS",
+    //   company: "TCS",
 
-      role: "Graphic Designer",
+    //   role: "Graphic Designer",
 
-      package: "4.2 LPA",
+    //   package: "4.2 LPA",
 
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
+    //   image: "https://randomuser.me/api/portraits/men/32.jpg",
 
-      journey: "Started as a beginner in design, learned advanced tools and techniques through our comprehensive course.",
+    //   journey: "Started as a beginner in design, learned advanced tools and techniques through our comprehensive course.",
 
-      review: "The training was excellent and helped me land my dream job at TCS. The faculty was very supportive.",
+    //   review: "The training was excellent and helped me land my dream job at TCS. The faculty was very supportive.",
 
-      duration: "6 months",
+    //   duration: "6 months",
 
-      batch: "2023 Batch",
+    //   batch: "2023 Batch",
 
-      location: "Mumbai",
+    //   location: "Mumbai",
 
-      skills: ["Photoshop", "Illustrator", "Figma", "UI Design"],
+    //   skills: ["Photoshop", "Illustrator", "Figma", "UI Design"],
 
-      achievements: ["Best Project Award", "90% Score", "Internship Excellence"]
+    //   achievements: ["Best Project Award", "90% Score", "Internship Excellence"]
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 2,
+    //   id: 2,
 
-      name: "Priya Sharma",
+    //   name: "Priya Sharma",
 
-      course: "UI/UX Designing",
+    //   course: "UI/UX Designing",
 
-      company: "Infosys",
+    //   company: "Infosys",
 
-      role: "UI/UX Designer",
+    //   role: "UI/UX Designer",
 
-      package: "5.1 LPA",
+    //   package: "5.1 LPA",
 
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
+    //   image: "https://randomuser.me/api/portraits/women/44.jpg",
 
-      journey: "Transitioned from non-tech background to UI/UX design through intensive training and real projects.",
+    //   journey: "Transitioned from non-tech background to UI/UX design through intensive training and real projects.",
 
-      review: "Amazing learning experience! The practical approach and industry-relevant curriculum made all the difference.",
+    //   review: "Amazing learning experience! The practical approach and industry-relevant curriculum made all the difference.",
 
-      duration: "8 months",
+    //   duration: "8 months",
 
-      batch: "2023 Batch",
+    //   batch: "2023 Batch",
 
-      location: "Bangalore",
+    //   location: "Bangalore",
 
-      skills: ["Figma", "Adobe XD", "User Research", "Prototyping"],
+    //   skills: ["Figma", "Adobe XD", "User Research", "Prototyping"],
 
-      achievements: ["Top Performer", "Design Competition Winner", "100% Placement"]
+    //   achievements: ["Top Performer", "Design Competition Winner", "100% Placement"]
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 3,
+    //   id: 3,
 
-      name: "Aman Gupta",
+    //   name: "Aman Gupta",
 
-      course: "Digital Marketing",
+    //   course: "Digital Marketing",
 
-      company: "HCL",
+    //   company: "HCL",
 
-      role: "SEO Executive",
+    //   role: "SEO Executive",
 
-      package: "3.8 LPA",
+    //   package: "3.8 LPA",
 
-      image: "https://randomuser.me/api/portraits/men/22.jpg",
+    //   image: "https://randomuser.me/api/portraits/men/22.jpg",
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 4,
+    //   id: 4,
 
-      name: "Neha Kapoor",
+    //   name: "Neha Kapoor",
 
-      course: "Graphic Designing",
+    //   course: "Graphic Designing",
 
-      company: "Wipro",
+    //   company: "Wipro",
 
-      role: "Brand Designer",
+    //   role: "Brand Designer",
 
-      package: "4.8 LPA",
+    //   package: "4.8 LPA",
 
-      image: "https://randomuser.me/api/portraits/women/65.jpg",
+    //   image: "https://randomuser.me/api/portraits/women/65.jpg",
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 5,
+    //   id: 5,
 
-      name: "Karan Singh",
+    //   name: "Karan Singh",
 
-      course: "Digital Marketing",
+    //   course: "Digital Marketing",
 
-      company: "Google",
+    //   company: "Google",
 
-      role: "Digital Marketing Specialist",
+    //   role: "Digital Marketing Specialist",
 
-      package: "6.2 LPA",
+    //   package: "6.2 LPA",
 
-      image: "https://randomuser.me/api/portraits/men/45.jpg",
+    //   image: "https://randomuser.me/api/portraits/men/45.jpg",
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 6,
+    //   id: 6,
 
-      name: "Anjali Patel",
+    //   name: "Anjali Patel",
 
-      course: "Digital Marketing",
+    //   course: "Digital Marketing",
 
-      company: "Facebook",
+    //   company: "Facebook",
 
-      role: "Social Media Manager",
+    //   role: "Social Media Manager",
 
-      package: "5.8 LPA",
+    //   package: "5.8 LPA",
 
-      image: "https://randomuser.me/api/portraits/women/28.jpg",
+    //   image: "https://randomuser.me/api/portraits/women/28.jpg",
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 7,
+    //   id: 7,
 
-      name: "Rohit Kumar",
+    //   name: "Rohit Kumar",
 
-      course: "Digital Marketing",
+    //   course: "Digital Marketing",
 
-      company: "Amazon",
+    //   company: "Amazon",
 
-      role: "PPC Expert",
+    //   role: "PPC Expert",
 
-      package: "5.5 LPA",
+    //   package: "5.5 LPA",
 
-      image: "https://randomuser.me/api/portraits/men/38.jpg",
+    //   image: "https://randomuser.me/api/portraits/men/38.jpg",
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 8,
+    //   id: 8,
 
-      name: "Sneha Reddy",
+    //   name: "Sneha Reddy",
 
-      course: "Digital Marketing",
+    //   course: "Digital Marketing",
 
-      company: "Microsoft",
+    //   company: "Microsoft",
 
-      role: "Content Marketer",
+    //   role: "Content Marketer",
 
-      package: "5.2 LPA",
+    //   package: "5.2 LPA",
 
-      image: "https://randomuser.me/api/portraits/women/52.jpg",
+    //   image: "https://randomuser.me/api/portraits/women/52.jpg",
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 9,
+    //   id: 9,
 
-      name: "Arjun Mehta",
+    //   name: "Arjun Mehta",
 
-      course: "Web Development",
+    //   course: "Web Development",
 
-      company: "Microsoft",
+    //   company: "Microsoft",
 
-      role: "Full Stack Developer",
+    //   role: "Full Stack Developer",
 
-      package: "7.5 LPA",
+    //   package: "7.5 LPA",
 
-      image: "https://randomuser.me/api/portraits/men/50.jpg",
+    //   image: "https://randomuser.me/api/portraits/men/50.jpg",
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 10,
+    //   id: 10,
 
-      name: "Kavya Singh",
+    //   name: "Kavya Singh",
 
-      course: "Data Science",
+    //   course: "Data Science",
 
-      company: "Amazon",
+    //   company: "Amazon",
 
-      role: "Data Analyst",
+    //   role: "Data Analyst",
 
-      package: "8.2 LPA",
+    //   package: "8.2 LPA",
 
-      image: "https://randomuser.me/api/portraits/women/30.jpg",
+    //   image: "https://randomuser.me/api/portraits/women/30.jpg",
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 11,
+    //   id: 11,
 
-      name: "Vikram Rajput",
+    //   name: "Vikram Rajput",
 
-      course: "Mobile Development",
+    //   course: "Mobile Development",
 
-      company: "Google",
+    //   company: "Google",
 
-      role: "Android Developer",
+    //   role: "Android Developer",
 
-      package: "9.1 LPA",
+    //   package: "9.1 LPA",
 
-      image: "https://randomuser.me/api/portraits/men/28.jpg",
+    //   image: "https://randomuser.me/api/portraits/men/28.jpg",
 
-    },
+    // },
 
-    {
+    // {
 
-      id: 12,
+    //   id: 12,
 
-      name: "Divya Sharma",
+    //   name: "Divya Sharma",
 
-      course: "Cloud Computing",
+    //   course: "Cloud Computing",
 
-      company: "IBM",
+    //   company: "IBM",
 
-      role: "Cloud Engineer",
+    //   role: "Cloud Engineer",
 
-      package: "6.8 LPA",
+    //   package: "6.8 LPA",
 
-      image: "https://randomuser.me/api/portraits/women/45.jpg",
+    //   image: "https://randomuser.me/api/portraits/women/45.jpg",
 
-    }
+    // }
 
   ];
 
@@ -364,7 +364,7 @@ export default function Placement({ courseType }) {
 
           <p className="text-gray-600 mt-3">
 
-            Real students. Real placements. Real careers. Meet our success stories like Rahul Verma (TCS, 6.5 LPA), Priya Sharma (Infosys, 5.8 LPA), Vikram Rajput (Google, 9.1 LPA), and many more.
+            Real students. Real placements. Real careers. Meet our success stories like --
 
           </p>
 

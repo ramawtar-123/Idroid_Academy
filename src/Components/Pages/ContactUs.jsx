@@ -67,7 +67,7 @@ export default function Contact() {
 
       question: "How can I contact iDroid Academy?",
 
-      answer: "You can contact us via phone at +91-9876543210, email at info@idroidacademy.com, or visit our institute at the provided address."
+      answer: "You can contact us via phone at  +91 9131817090, email at info@idroidacademy.com, or visit our institute at the provided address."
 
     },
 
@@ -391,7 +391,7 @@ export default function Contact() {
 
                       name="phone"
 
-                      placeholder="+91 98765 43210"
+                      placeholder=" +91 9131817090"
 
                       value={formData.phone}
 
@@ -431,15 +431,9 @@ export default function Contact() {
 
                       <option value="graphic-design">Graphic Designing</option>
 
-                      <option value="ui-ux-design">UI/UX Designing</option>
-
                       <option value="video-editing">Video Editing</option>
 
                       <option value="digital-marketing">Digital Marketing</option>
-
-                      <option value="web-development">Web Development</option>
-
-                      <option value="data-science">Data Science</option>
 
                     </select>
 
@@ -525,7 +519,7 @@ export default function Contact() {
 
                       <h4 className="font-semibold text-gray-800">Phone</h4>
 
-                      <p className="text-gray-600">+91 98765 43210</p>
+                      <p className="text-gray-600"> +91 9131817090</p>
 
                       <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM</p>
 
@@ -569,9 +563,9 @@ export default function Contact() {
 
                       <h4 className="font-semibold text-gray-800">Address</h4>
 
-                      <p className="text-gray-600">MP Nagar, Bhopal</p>
+                      <p className="text-gray-600"> Plot No. 61, 3rd Floor, Near Shree Vatika Hotel, Zone-I, M.P. Nagar Bhopal, M.P.</p>
 
-                      <p className="text-gray-600">Madhya Pradesh, India</p>
+                      <p className="text-gray-600">India</p>
 
                     </div>
 

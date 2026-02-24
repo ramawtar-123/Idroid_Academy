@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import { Download, ChevronDown, ChevronUp } from "lucide-react";
 
 const digitalMarketingImages = [
-  "https://images.unsplash.com/photo-1460925855937-0ab04a72f8d?w=600&h=400&fit=crop",
+   "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg",
   "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
   "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
   "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop",
 ];
 
 const graphicDesignImages = [
-  "https://images.unsplash.com/photo-1561070771-5b2f5a1c3c8f?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1559028012-cdad1e64f973?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1628772818978-71b1dbb6c8d8?w=600&h=400&fit=crop",
-  "https://images.unsplash.com/photo-1581291518857-67081a4ba6c5?w=600&h=400&fit=crop",
+  "https://images.pexels.com/photos/6592395/pexels-photo-6592395.jpeg",
+  "https://images.pexels.com/photos/5313152/pexels-photo-5313152.jpeg",
+  "https://images.pexels.com/photos/7693186/pexels-photo-7693186.jpeg",
+  "https://images.pexels.com/photos/7693723/pexels-photo-7693723.jpeg"
 ];
 
 const homeImages = [
@@ -141,7 +141,7 @@ export default function Highlights({ highlights: customHighlights, courseType })
 
   return (
     <>
-      <section className="w-full py-16">
+      <section className="w-full p-2 py-16">
         <div className="max-w-7xl mx-auto px- grid md:grid-cols-2 gap-12 items-center">
 
           {/* LEFT - Image Slider */}

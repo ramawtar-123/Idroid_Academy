@@ -10,7 +10,7 @@ export default function Footer() {
 
     <footer className="bg-gradient-to-br from-white via-blue-50 to-white text-gray-700 pt-16 pb-8 relative overflow-hidden">
 
-      
+
 
       {/* Background Pattern */}
 
@@ -22,7 +22,7 @@ export default function Footer() {
 
       </div>
 
-      
+
 
       {/* Top CTA Section */}
 
@@ -46,9 +46,9 @@ export default function Footer() {
 
           </div>
 
-          <Link 
+          <Link
 
-            to="/contact-us" 
+            to="/contact-us"
 
             className="bg-gradient-to-r from-blue-400 to-blue-500 text-white px-6 py-3 rounded-xl font-semibold hover:scale-105 transition shadow-lg"
 
@@ -69,7 +69,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10 relative z-10">
 
-        
+
 
         {/* About */}
 
@@ -77,13 +77,13 @@ export default function Footer() {
 
           <h3 className="h-12 w-32 md:h-16 md:w-36 object-contain">
 
-          <img src="/Idroid-acedmey-logo.png" alt="Idroid Academy"  />
+            <img src="/Idroid-acedmey-logo.png" alt="Idroid Academy" />
 
           </h3>
 
           <p className="text-sm leading-relaxed text-gray-600">
 
-            Professional training institute for Graphic Design, 
+            Professional training institute for Graphic Design,
 
             Digital Marketing & Video Editing with 100% placement support.
 
@@ -95,13 +95,41 @@ export default function Footer() {
 
           <div className="flex gap-4 mt-6">
 
-            <Facebook className="hover:text-blue-500 cursor-pointer text-gray-600" />
+            <a
+              href="https://www.facebook.com/search/top?q=idroid%20becance"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <Facebook className="hover:text-blue-500 cursor-pointer text-gray-600" />
+            </a>
 
-            <Instagram className="hover:text-blue-500 cursor-pointer text-gray-600" />
+            <a
+              href="https://www.instagram.com/idroidacademy/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <Instagram className="hover:text-pink-500 cursor-pointer text-gray-600" />
+            </a>
 
-            <Linkedin className="hover:text-blue-500 cursor-pointer text-gray-600" />
+            <a
+              href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Aorganization%3A96464007&keywords=idroid%20becance&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=d9e88d08-7ed0-4c65-9a32-4275769e4551&sid=(R2&spellCorrectionEnabled=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="hover:text-blue-700 cursor-pointer text-gray-600" />
+            </a>
 
-            <Youtube className="hover:text-blue-500 cursor-pointer text-gray-600" />
+            <a
+              href="https://www.youtube.com/@AnkitSpeaks-n4x"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <Youtube className="hover:text-red-500 cursor-pointer text-gray-600" />
+            </a>
 
           </div>
 
@@ -175,9 +203,9 @@ export default function Footer() {
 
             <div className="flex items-center gap-3">
 
-              <MapPin size={18} className="text-blue-500" />
+              <MapPin size={35} className="text-blue-500 md:text-2xl" />
 
-              <span>Bhopal, Madhya Pradesh, India</span>
+              <span> Plot No. 61, 3rd Floor, Near Shree Vatika Hotel, Zone-I, M.P. Nagar Bhopal, M.P.</span>
 
             </div>
 
@@ -193,7 +221,7 @@ export default function Footer() {
 
               <Mail size={18} className="text-blue-500" />
 
-              <span>idroidacademy@gmail.com</span>
+              <span>info@idroidacademy.com</span>
 
             </div>
 

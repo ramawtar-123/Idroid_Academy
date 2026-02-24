@@ -12,11 +12,11 @@ export default function Courses() {
       // price: "₹15,999"
     },
     {
-      title: "UI/UX Designing", 
+      title: "Digital Marketing", 
       duration: "4 Months",
       level: "Intermediate",
-      description: "Create beautiful and functional user interfaces",
-      features: ["Figma", "User Research", "Prototyping", "Design Systems"],
+      description: "Learn digital marketing strategies and tools",
+      features: ["Google Ads", "Social Media Marketing", "SEO", "Analytics"],
       // price: "₹19,999"
     },
     {
@@ -52,6 +52,7 @@ export default function Courses() {
             <button className="bg-white text-[#1e3a8a] px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition transform hover:scale-105 shadow-xl">
               Explore All Courses
             </button>
+            
             <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-[#1e3a8a] transition transform hover:scale-105">
               Download Brochure
             </button>

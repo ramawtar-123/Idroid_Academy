@@ -1,20 +1,20 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Layout from '../Layout';
 import StatsBar from '../StatsBar';
 import Companies from '../Companies';
 import Courses from '../Courses';
-import Placement from '../Placement';
+// import Placement from '../Placement';
 import Tools from '../Tools';
 import Highlights from '../Highlights';
 import Careers from '../Careers';
-import Corroboration from '../Corroboration';
+// import Corroboration from '../Corroboration';
 import Review from '../Review';
 import FAQSection from '../FAQSection';
 
 export default function GraphicDesignCourse() {
 
-   const handleEnrollNow = () => {
+  const handleEnrollNow = () => {
     if (window.openCourseEnrollmentModal) {
       window.openCourseEnrollmentModal({
         title: "Graphic Designing",
@@ -37,11 +37,12 @@ export default function GraphicDesignCourse() {
       window.openLoginModal('graphic-design-syllabus');
     }
   };
-   
+
   const graphicDesignStats = [
     { number: "100+", label: "Graphics Students" },
     { number: "92%", label: "Placement Rate" },
-    { number: "4.2★", label: "Average Rating" }
+    { number: "4.2★", label: "Average Rating" },
+    { number: "50+", label: "Hiring Partners" }
   ];
 
   const graphicDesignCompanies = [
@@ -70,7 +71,7 @@ export default function GraphicDesignCourse() {
       icon: "🎨"
     },
     {
-      title: "Brand Designer", 
+      title: "Brand Designer",
       description: "Create visual identities for brands",
       salary: "₹4.8 LPA",
       icon: "🏷️"
@@ -156,72 +157,54 @@ export default function GraphicDesignCourse() {
     {
       question: "Is this course suitable for beginners?",
       answer: "Yes, this course is designed for beginners and takes you from basics to advanced level."
-    },
-    {
-      question: "What is the average salary after this course?",
-      answer: "The average starting salary ranges from ₹4.8 LPA to ₹8.2 LPA depending on the role."
     }
-];
+  ];
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-cover scroll-smooth bg-center bg-no-repeat py-40 px-6" style={{ backgroundImage: `url('https://images.pexels.com/photos/12899094/pexels-photo-12899094.jpeg')` }}>
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white/70 mb-6 animate-fade-in-up">
-                Graphic Designing <br /> Master Course
+      
+      <section className="bg-cover scroll-smooth bg-fixed relative bg-center bg-no-repeat" style={{ backgroundImage: `url('https://images.pexels.com/photos/6592405/pexels-photo-6592405.jpeg')` }}>
+        <div className="max-w-8xl pt-40 px-10  h-screen mx-auto">
+          <div className="grid md:grid-cols-2  gap-12 items-center">
+            <div className='pt-76 md:pt-36 h-full'>
+              <h1 className="text-4xl md:text-5xl font-bold text-cyan-500 mb-6 animate-fade-in-up">
+                 Graphic Designing <br /> Master Course
               </h1>
-              <p className="text-lg font-extralight text-black/70 mb-8 animate-fade-in-up animate-stagger-1">
-                Master the art of visual communication with industry-standard tools and techniques
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up animate-stagger-2">
-                <button 
+              <p className="text-lg text-blue-800 bg-white/60 rounded-2xl p-2 mb-8 animate-fade-in-up animate-stagger-1">
+               Master the art of visual communication with industry-standard tools and techniques              </p>
+              <div className="flex gap-4 mb-8 animate-fade-in-up animate-stagger-2">
+                <button
                   onClick={handleEnrollNow}
-                  className="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg transition transform hover:scale-105"
+                  className="bg-gradient-to-r from-[#1e3a8a] to-[#3b82f6] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition transform hover:scale-105"
                 >
                   Enroll Now
                 </button>
-                <button 
+                <button
                   onClick={handleDownloadSyllabus}
-                  className="border-1 border-[#1e3a8a] text-white/80 px-8 py-4 rounded-xl font-bold hover:bg-[#1e3a8a] hover:text-white transition"
+                  className="border-1 border-[#1e3a8a] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#1e3a8a] hover:text-white transition"
                 >
                   Download Syllabus
                 </button>
               </div>
-              {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 animate-fade-in-up animate-stagger-3">
-                <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-                  <div className="text-2xl sm:text-3xl font-bold text-white">3 Months</div>
-                  <div className="text-blue-100 text-sm sm:text-base">Duration</div>
-                </div>
-                <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-                  <div className="text-2xl sm:text-3xl font-bold text-white">Beginner</div>
-                  <div className="text-blue-100 text-sm sm:text-base">Level</div>
-                </div>
-                <div className="text-center p-4 bg-white/10 backdrop-blur-sm rounded-xl">
-                  <div className="text-2xl sm:text-3xl font-bold text-white">₹15,999</div>
-                  <div className="text-blue-100 text-sm sm:text-base">Fee</div>
-                </div>
-              </div> */}
             </div>
             <div className="animate-fade-in-right">
             </div>
           </div>
         </div>
+
       </section>
 
       <StatsBar stats={graphicDesignStats} />
       <Companies companies={graphicDesignCompanies} />
       <Courses courseType="graphic-designing" />
-      <Placement courseType="graphic-designing" />
+      {/* <Placement courseType="graphic-designing" /> */}
       <Tools tools={graphicDesignTools} />
       <Highlights highlights={graphicDesignHighlights} courseType="graphic-designing" />
       <Careers careers={graphicDesignCareers} />
       {/* <Corroboration courseType="graphic-designing" /> */}
       <Review reviews={graphicDesignReviews} />
-      <FAQSection 
-        faqData={graphicDesignFAQ} 
+      <FAQSection
+        faqData={graphicDesignFAQ}
         title="Frequently Asked Questions"
       />
     </Layout>

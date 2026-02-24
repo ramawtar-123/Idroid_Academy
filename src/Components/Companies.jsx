@@ -21,7 +21,7 @@ export default function Companies({ companies: customCompanies }) {
   return (
     <section className="py-16 p-4 bg-gray-50 text-center">
       <h2 className="text-2xl font-bold mb-8 text-[#1e3a8a]">
-        Our Students Working With Companies Like
+        We are connected With Companies Like
       </h2>
 
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
@@ -48,7 +48,7 @@ export default function Companies({ companies: customCompanies }) {
 
       <div className="mt-12 max-w-4xl mx-auto">
         <p className="text-gray-600 text-center text-lg">
-          Join <span className="font-bold text-[#1e3a8a]">12,463+ students</span> who are already building their careers at top companies
+          <span className="font-bold text-[#1e3a8a]"> students</span> will start their careers at top companies
         </p>
         <div className="mt-6 flex justify-center">
           <Link 

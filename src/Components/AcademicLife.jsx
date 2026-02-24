@@ -1,10 +1,10 @@
 export default function AcademicLife() {
   const videos = [
-    "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "https://www.youtube.com/embed/ysz5S6PUM-U",
-    "https://www.youtube.com/embed/tgbNymZ7vqY",
-    "https://www.youtube.com/embed/9bZkp7q19f0",
-    "https://www.youtube.com/embed/l482T0yNkeo",
+    "/AcademicLife1.mp4",
+    "/AcademicLife2.mp4",
+    "/AcademicLife3.mp4",
+    "/AcademicLife4.mp4",
+    "/AcademicLife5.mp4",
   ];
 
   const scrollLeft = () => {
